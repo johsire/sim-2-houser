@@ -21,7 +21,7 @@ app.post("/api/house/", controller.create);
 app.delete("/api/house/:id", controller.delete);
 
 
-const SERVER_PORT = process.env.SERVER_PORT || 4200;
+const SERVER_PORT = process.env.SERVER_PORT || 4500;
 app.listen(SERVER_PORT, () => {
   console.log(`Kevin Hart cracking em up on port: ~ ${SERVER_PORT}!`);
 });
