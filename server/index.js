@@ -10,7 +10,7 @@ const app = express();
 massive(process.env.CONNECTION_STRING)
   .then(dbInstance => {
    app.set('db', dbInstance)})
-  .catch(err => console.log(err));
+  .catch(err => console.log(err, 'Error from Massive here <<<====xxx'));
 
 app.use(bodyParser.json());
 

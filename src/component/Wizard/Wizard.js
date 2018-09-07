@@ -90,6 +90,12 @@ class Wizard extends Component {
           <input name="state" type='text' placeholder='State' value={this.state.state} onChange={e => this.handleChange(e)} />
           <input name="zip" type='number' placeholder='Zip' value={this.state.zip} onChange={e => this.handleChange(e)} />
         </div>
+        <br/>
+        <div className="button">
+            <Link to="/">
+              <button>Complete</button>
+            </Link>
+          </div>
       </form>        
       </div>
     );
