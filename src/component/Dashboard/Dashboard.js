@@ -14,10 +14,9 @@ class Dashboard extends Component {
   };
 
   componentDidMount() {
-    axios.get('/api/house')
-      .then((res) => {
+    axios.get('/api/house').then((res) => {
       this.setState({ houses: res.data.house })
-    }),
+    })
 
     axios.delete('/api/house/:id')
       .then((res) => {
@@ -26,7 +25,7 @@ class Dashboard extends Component {
   };
 
   render() {
-    const { houses } = this.state;
+    // const { houses } = this.state;
 
     return (
       <div>
@@ -43,10 +42,3 @@ class Dashboard extends Component {
 };
 
 export default Dashboard;
-
-
-  {/* //   {houses.props.map(house => { */}
-    {/* //     return(
-    //       <h1>address={this.props.address}</h1>
-    //     )
-    //   })} */}

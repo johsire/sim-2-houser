@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function House (props) {
   return (
@@ -18,11 +18,9 @@ function House (props) {
 };
 
 export default House;
-
-
-      {/* if (houses.length > 0) {
-      return (<House houses={houses} />)
-    } else {
-      return (<h1>Houses Loading...</h1>)
-    } */}
-
+     
+// if (houses.length > 0) {
+//       return (<House houses={houses} />)
+//     } else {
+//       return (<h1>Houses Loading...</h1>)
+//     }
