@@ -17,6 +17,9 @@ class Wizard extends Component {
             <Link to="/">
               <button>Cancel</button>
             </Link>
+      <Route component={ StepOne } exact path="/wizard/step1" />
+      <Route component={ StepTwo } exact path="/wizard/step2" />
+      <Route component={ StepThree } exact path="/wizard/step3" />
       </div>
       </div>
     );

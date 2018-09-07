@@ -38,14 +38,24 @@ module.exports = {
       });
   },
 
-  delete: (req, res) => {
+  delete: (req, res, next) => {
     const dbInstance = req.app.get('db');
-    const { deleteId, houseIndex, houses } = req.params.id;
-    houseIndex = houses.findIndex( house => 
-      houseIndex == deleteId);
-      houses.splice(houseIndex)
-      res.sendStatus(200).json(houses);
+    const { params } = req;
 
+    dbInstance.delete_house([ params.id ])
+              .then(() => res.sendStatus(200))
+              .catch(err => {
+                res.status(500).send({ errorMessage: "Error Something went wrong in the backend" })
+              });
   }
 
+  // delete: (req, res) => {
+  //   const dbInstance = req.app.get('db');
+  //   const { houseId } = req.params.id;
+  //   let deleteId = houseId
+  //   houseId = houses.filter( house => 
+  //     house.id === deleteId);
+  //     houses.splice(houseId, 1)
+  //     res.status(200).send(houses);
+  // }
 };

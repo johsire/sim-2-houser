@@ -16,7 +16,7 @@ class Dashboard extends Component {
   componentDidMount() {
     axios.get('/api/house').then((res) => {
       this.setState({ houses: res.data.house })
-    })
+    });
 
     axios.delete('/api/house/:id')
       .then((res) => {
