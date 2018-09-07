@@ -28,7 +28,6 @@ class Wizard extends Component {
     });
   };
 
-
   handleSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -37,7 +36,7 @@ class Wizard extends Component {
       city: this.state.city,
       state: this.state.state,
       zip: this.state.zip
-    }
+    };
     
     axios.post('api/house', data)
       .then(res => {
@@ -54,11 +53,8 @@ class Wizard extends Component {
        console.log(err, 'error from the backend after axios call');
      })
     //  console.log('api/house');
-  }  
+  };  
 
-
-
-    
   render() {
     return (
       <div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from './component/Header/Header';
-import route from './route';
+import routes from './routes';
 import './App.css';
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
           <Link to="/" className='links'>Dashboard</Link>
           <Link to="/Wizard" className='links'>Wizard</Link> 
         </nav>
-        {route}
+        {routes}
       </div>
     )}
 };

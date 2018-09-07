@@ -7,25 +7,27 @@ import House from '../House/House';
 class Dashboard extends Component {
   constructor() {
     super();
+
     this.state = {
       houses: []
     }
-  }
+  };
 
   componentDidMount() {
     axios.get('/api/house')
       .then((res) => {
       this.setState({ houses: res.data.house })
     }),
-    axios.delete('/api/house')
+
+    axios.delete('/api/house/:id')
       .then((res) => {
         this.setState ({ houses: res.data.house })
       })
-  }
-
-
+  };
 
   render() {
+    const { houses } = this.state;
+
     return (
       <div>
         <h2>Dashboard</h2>
@@ -35,9 +37,16 @@ class Dashboard extends Component {
               <button >Add New Property </button>
             </Link>
           </div>
-      </div>
+       </div>
     );
   }
 };
 
 export default Dashboard;
+
+
+  {/* //   {houses.props.map(house => { */}
+    {/* //     return(
+    //       <h1>address={this.props.address}</h1>
+    //     )
+    //   })} */}

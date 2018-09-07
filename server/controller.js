@@ -32,7 +32,7 @@ module.exports = {
     const dbInstance = req.app.get('db');
     const { name, address , city, state, zip } = req.body;
 
-    dbInstance.create_house()
+    dbInstance.create_house({ name, address , city, state, zip })
       .then(() => res.sendStaus(200))
       .catch(err => {
         res.status(500).send({errorMessage: "Error! Somethng went wrong"});
