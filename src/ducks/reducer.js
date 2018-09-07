@@ -7,13 +7,6 @@ const initalState = {
     zip: 0,
 };
 
-
-// const UPDATE_NAME = 'UPDATE_NAME';
-// const UPDATE_ADDRESS = 'UPDATE_ADDRESS';
-// const UPDATE_CITY = 'UPDATE_CITY';
-// const UPDATE_STATE = 'UPDATE_STATE';
-// const UPDATE_ZIP = 'UPDATE_ZIP';
-
 const UPDATE_PROPERTY = "UPDATE_PROPERTY"
 
 export function updateProperty(name, address, city, state, zip) {
@@ -23,7 +16,7 @@ export function updateProperty(name, address, city, state, zip) {
   }
 };
 
-function reducer(state = initialState, action) {
+function reducer(state = initalState, action) {
  switch (action.type) {
   case UPDATE_PROPERTY:
    return Object.assign({}, state, { property: action.payload });
@@ -97,3 +90,10 @@ export default reducer;
 
 // case UPDATE_ZIP:
 // return Object.assign({}, state, { zip: action.payload });
+
+
+// const UPDATE_NAME = 'UPDATE_NAME';
+// const UPDATE_ADDRESS = 'UPDATE_ADDRESS';
+// const UPDATE_CITY = 'UPDATE_CITY';
+// const UPDATE_STATE = 'UPDATE_STATE';
+// const UPDATE_ZIP = 'UPDATE_ZIP';
