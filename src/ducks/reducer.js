@@ -5,9 +5,11 @@ const initalState = {
     city: '',
     state: '',
     zip: 0,
+    cancel: false,
 };
 
 const UPDATE_PROPERTY = "UPDATE_PROPERTY"
+const UPDATE_CANCEL = "UPDATE_CANCEL"
 
 export function updateProperty(name, address, city, state, zip) {
   return {
@@ -16,10 +18,20 @@ export function updateProperty(name, address, city, state, zip) {
   }
 };
 
+export function updateCancel(cancel) {
+  return {
+    type: "CANCEL_BUTTON",
+    payload: cancel
+  }
+};
+
 function reducer(state = initalState, action) {
  switch (action.type) {
   case UPDATE_PROPERTY:
    return Object.assign({}, state, { property: action.payload });
+
+   case UPDATE_CANCEL:
+   return Object.assign({}, state, { "CANCEL_BUTTON": action.payload });
 
   default:
    return state;
