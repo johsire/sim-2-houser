@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Switch, Route } from 'react-router-dom';
 // import axios from 'axios';
-import { Route } from 'react-router-dom';
 
 import StepOne from '../StepOne/StepOne';
 import StepTwo from '../StepTwo/StepTwo';
@@ -17,9 +16,13 @@ class Wizard extends Component {
             <Link to="/">
               <button>Cancel</button>
             </Link>
-      <Route component={ StepOne } exact path="/wizard/step1" />
-      <Route component={ StepTwo } exact path="/wizard/step2" />
-      <Route component={ StepThree } exact path="/wizard/step3" />
+      export (
+        <Switch>
+          <Route component={ StepOne } path="/wizard/step1" />
+          <Route component={ StepTwo } path="/wizard/step2" />
+          <Route component={ StepThree } path="/wizard/step3" />
+        </Switch>
+      )
       </div>
       </div>
     );

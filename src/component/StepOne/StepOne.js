@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { updateProperty } from '../../ducks/reducer' 
 
 class StepOne extends Component {
  constructor() {
@@ -22,7 +24,7 @@ componentDidMount() {
 }
 
 handleChange = (e) => {
- this.setState({
+  updateProperty({
    [e.target.name]: e.target.value
  });
 };
@@ -72,4 +74,12 @@ handleSubmit = (e) => {
   )}
 };
 
-export default StepOne;
+function mapStateToProps(state){
+  const { property } = state;
+
+  return {
+    property
+  };
+};
+
+export default connect(mapStateToProps, { updateProperty })(StepOne);
